@@ -2,7 +2,7 @@
 
 This project is a simple yet effective TCP port scanner built using Python, Flask, and a minimalistic web interface. The primary objective of the project is to allow users to scan a specific host or a network subnet for open TCP ports, giving immediate feedback via a web-based front-end. The tool is lightweight, easy to use, and is perfect for network administrators, cybersecurity enthusiasts, and anyone interested in network security.
 
-Features:
+## Features:
 
 TCP Port Scanning: The application allows you to scan a range of ports (from a specified start to end port) on either a single host or an entire network. It will identify open TCP ports, helping you assess the security posture of a network.
 
@@ -16,13 +16,13 @@ Customizable: Users can specify the IP address and the port range, allowing for 
 
 Easy Setup: All you need to run the application is Python, Flask, and the necessary dependencies. A simple installation and setup process ensures you can quickly get up and running.
 
-Technologies:
+## Technologies:
 
 Back-End: The port scanning functionality is implemented using Python’s socket library, and the web server is powered by Flask, a lightweight Python framework.
 
 Front-End: The web interface is built using HTML, CSS, and JavaScript (with jQuery for AJAX functionality). This allows for a dynamic, real-time user experience without needing to refresh the page.
 
-Libraries:
+## Libraries:
 
 Flask: For handling HTTP requests and rendering templates.
 
@@ -30,7 +30,7 @@ socket: For performing the actual TCP port scans.
 
 jQuery: For handling asynchronous requests (AJAX) between the front-end and back-end.
 
-How It Works:
+## How It Works:
 
 User Input: The user provides an IP address (or network range) and a range of ports to scan through the web form.
 
@@ -40,7 +40,7 @@ Real-Time Feedback: As each open port is discovered, the results are sent back t
 
 Output: The results are shown in an ordered list, displaying each open port found during the scan. If no open ports are detected, the application notifies the user that no open ports were found.
 
-Use Cases:
+## Use Cases:
 
 Network Security: This tool can be used by cybersecurity professionals to audit the security of a network, identifying which ports are open and possibly vulnerable to exploitation.
 
@@ -48,7 +48,7 @@ Network Administration: Network administrators can use the scanner to troublesho
 
 Educational: This project can serve as a learning tool for those interested in learning about networking concepts, TCP protocols, and web development.
 
-Installation:
+## Installation:
 
 Clone the Repository: First, clone the repository to your local machine using Git:
 ```
@@ -75,5 +75,5 @@ This will load the port scanner application, where you can start scanning.
 This will start a local web server. You can open your web browser and go to http://127.0.0.1:5000 to start using the port scanner.
 
 
-License:
+### License:
   This project is licensed under the MIT License, which means you are free to use, modify, and distribute the code with proper attribution.
