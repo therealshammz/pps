@@ -19,6 +19,7 @@ Easy Setup: All you need to run the application is Python, Flask, and the necess
 Technologies:
 
 Back-End: The port scanning functionality is implemented using Python’s socket library, and the web server is powered by Flask, a lightweight Python framework.
+
 Front-End: The web interface is built using HTML, CSS, and JavaScript (with jQuery for AJAX functionality). This allows for a dynamic, real-time user experience without needing to refresh the page.
 
 Libraries:
