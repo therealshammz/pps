@@ -25,20 +25,27 @@ Front-End: The web interface is built using HTML, CSS, and JavaScript (with jQue
 Libraries:
 
 Flask: For handling HTTP requests and rendering templates.
+
 socket: For performing the actual TCP port scans.
+
 jQuery: For handling asynchronous requests (AJAX) between the front-end and back-end.
 
 How It Works:
 
 User Input: The user provides an IP address (or network range) and a range of ports to scan through the web form.
+
 Port Scanning: The Python back-end (using the socket library) performs the TCP port scan by attempting to establish connections to each port in the specified range.
+
 Real-Time Feedback: As each open port is discovered, the results are sent back to the front-end via AJAX and displayed to the user.
+
 Output: The results are shown in an ordered list, displaying each open port found during the scan. If no open ports are detected, the application notifies the user that no open ports were found.
 
 Use Cases:
 
 Network Security: This tool can be used by cybersecurity professionals to audit the security of a network, identifying which ports are open and possibly vulnerable to exploitation.
+
 Network Administration: Network administrators can use the scanner to troubleshoot connectivity issues or monitor the status of servers and services across a network.
+
 Educational: This project can serve as a learning tool for those interested in learning about networking concepts, TCP protocols, and web development.
 
 Installation:
