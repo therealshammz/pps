@@ -1,55 +1,36 @@
-#!/usr/bin/python3
+from flask import Flask, render_template, request, jsonify
 import socket
-import sys
+import threading
 
-
-def scanHost(ip, startPort, endPort):
-    print('[*] Starting TCP port scan on host %s' % ip)
-
-    tcp_scan(ip, startPort, endPort)
-
-    print('[+] TCP scan on host %s complete' % ip)
-
-
-def scanRange(network, startPort, endPort):
-    print('[*] Starting TCP port scan on network %s.0' % network)
-
-    for host in range(1, 255):
-        ip = network + '.' + str(host)
-        tcp_scan(ip, startPort, endPort)
-
-    print('[+] TCP scan on network %s.0 complete' % network)
-
+app = Flask(__name__)
 
 def tcp_scan(ip, startPort, endPort):
+    open_ports = []
     for port in range(startPort, endPort + 1):
         try:
             tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            
+            tcp.settimeout(0.5)
             if not tcp.connect_ex((ip, port)):
-                print('[+] %s:%d/TCP Open' % (ip, port))
-                tcp.close()
-                
+                open_ports.append(port)
+            tcp.close()
         except Exception:
             pass
+    return open_ports
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/scan', methods=['POST'])
+def scan():
+    ip = request.form['ip']
+    start_port = int(request.form['start_port'])
+    end_port = int(request.form['end_port'])
+    
+    open_ports = tcp_scan(ip, start_port, end_port)
+    port_links = [f"<a href='http://{ip}:{port}' target='_blank'>Port {port}</a>" for port in open_ports]
+    
+    return jsonify({'open_ports': port_links})
 
 if __name__ == '__main__':
-    socket.setdefaulttimeout(0.01)
-
-    if len(sys.argv) < 4:
-        print('Usage: python3 portscanner.py <IP address> <start port> <end port>')
-        print('Example: python3 portscanner.py 192.168.1.10 1 65535\n')
-        print('Usage: python3 portscanner.py <network> <start port> <end port> -n')
-        print('Example: python3 portscanner.py 192.168.1 1 65535 -n')
-
-    elif len(sys.argv) >= 4:
-        network   = sys.argv[1]
-        startPort = int(sys.argv[2])
-        endPort   = int(sys.argv[3])
-
-    if len(sys.argv) == 4:
-        scanHost(network, startPort, endPort)
-
-    if len(sys.argv) == 5:
-        scanRange(network, startPort, endPort)
+    app.run(host='0.0.0.0', port=5000, debug=True)
