@@ -72,8 +72,5 @@ http://127.0.0.1:5000
 
 This will load the port scanner application, where you can start scanning.
 
-This will start a local web server. You can open your web browser and go to http://127.0.0.1:5000 to start using the port scanner.
-
-
 ### License:
   This project is licensed under the MIT License, which means you are free to use, modify, and distribute the code with proper attribution.
