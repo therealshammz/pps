@@ -1,4 +1,4 @@
-#Port Scanner Web Application
+# Port Scanner Web Application
 
 This project is a simple yet effective TCP port scanner built using Python, Flask, and a minimalistic web interface. The primary objective of the project is to allow users to scan a specific host or a network subnet for open TCP ports, giving immediate feedback via a web-based front-end. The tool is lightweight, easy to use, and is perfect for network administrators, cybersecurity enthusiasts, and anyone interested in network security.
 Features:
@@ -50,14 +50,14 @@ Use Cases:
 Installation:
 
 To run the application locally, you will need Python and Flask installed. You can install the necessary dependencies using pip:
-'''
+```
 pip install flask
-'''
+```
 
 Once Flask is installed, clone the repository, navigate to the project directory, and start the Flask development server:
-'''
+```
 python pps.py
-'''
+```
 
 This will start a local web server. You can open your web browser and go to http://127.0.0.1:5000 to start using the port scanner.
 License:
