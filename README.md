@@ -52,7 +52,7 @@ Educational: This project can serve as a learning tool for those interested in l
 
 Clone the Repository: First, clone the repository to your local machine using Git:
 ```
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/therealshammz/pps.git
 ```
 Navigate to the Project Directory: Change into the directory of the cloned repository:
 ```
